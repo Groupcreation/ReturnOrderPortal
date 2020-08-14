@@ -1,0 +1,53 @@
+﻿@model ReturnOrderPortal.Models.ProcessResponse
+
+@{
+    ViewData["Title"] = "ProcessResponse";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td>@Html.Label("Request Id")</td>
+            <td></td>
+            <td>@Html.Display("RequestId")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Processing Charge")</td>
+            <td></td>
+            <td>@Html.Display("ProcessingCharge")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("PackagingAndDeliveryCharge")</td>
+            <td></td>
+            <td>@Html.Display("PackagingAndDeliveryCharge")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("DateOfDelivery")</td>
+            <td></td>
+            <td>@Html.Display("DateOfDelivery")</td>
+        </tr>
+
+    </table>
+
+    @using (Html.BeginForm("Confirmation", "User", FormMethod.Post))
+    {
+        <input type="submit" value="Confirm Payment" />
+    }
+</body>
+</html>
+
+@*@<h3>Request Id :</h3>
+<h4>@Model.RequestId</h4>
+<br />
+<h3>Processing Charge:@Model.ProcessingCharge</h3>
+<br />
+<h3>PackagingAndDeliveryCharge:@Model.PackagingAndDeliveryCharge</h3>
+<br />
+<h3>Date Of Delivery:@Model.DateOfDelivery</h3>*@
